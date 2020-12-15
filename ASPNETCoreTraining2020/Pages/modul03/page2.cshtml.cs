@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace ASPNETCoreTraining2020.modul03
+namespace ASPNETCoreTraining2020.Pages.modul03
 {
-    public class page1Model : PageModel
+    public class page2Model : PageModel
     {
         public void OnGet()
         {
