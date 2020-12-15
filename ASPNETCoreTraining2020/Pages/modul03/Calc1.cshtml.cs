@@ -9,6 +9,8 @@ namespace ASPNETCoreTraining2020.Pages.modul03
 {
     public class Calc1Model : PageModel
     {
+ 
+
         public int Ergebnis { get; set; } = 0;
         public int Feld;
         public void OnGet()
