@@ -1,0 +1,14 @@
+﻿<table>
+    <tr>
+        <th>Wochentag</th>
+    </tr>
+
+    @for (int i = 0; i < 7; i++)
+    {
+        <tr>
+            <td>
+                @Enum.GetName(typeof(DayOfWeek), i)
+            </td>
+        </tr>
+    }
+</table>
