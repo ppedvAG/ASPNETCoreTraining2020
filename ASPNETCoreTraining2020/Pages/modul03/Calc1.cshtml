@@ -1,0 +1,12 @@
+﻿@page
+@model ASPNETCoreTraining2020.Pages.modul03.Calc1Model
+@{
+}
+<h1>Taschenrechner</h1>
+<form method="post">
+    <input name="eins" /><br />
+    <input name="zwei" />
+    <hr />
+    <button type="submit">addiere</button>
+    @Model.Ergebnis
+</form>
