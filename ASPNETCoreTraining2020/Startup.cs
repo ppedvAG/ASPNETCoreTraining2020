@@ -28,6 +28,7 @@ namespace ASPNETCoreTraining2020
             services.AddRazorPages();
             services.AddSingleton<Class1>();
             services.AddSingleton<MyCounter>();
+            services.AddHttpContextAccessor();
             
         }
 
