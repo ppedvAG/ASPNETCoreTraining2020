@@ -1,4 +1,5 @@
 using ASPNETCoreTraining2020.modul02;
+using ASPNETCoreTraining2020.Pages.modul03;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,7 @@ namespace ASPNETCoreTraining2020
         {
             services.AddRazorPages();
             services.AddSingleton<Class1>();
+            services.AddSingleton<MyCounter>();
             
         }
 
