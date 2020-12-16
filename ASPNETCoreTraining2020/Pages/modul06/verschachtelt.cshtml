@@ -1,0 +1,18 @@
+﻿@page
+@model ASPNETCoreTraining2020.Pages.modul06.verschachteltModel
+@{
+}
+<ul>
+    @foreach (var item in Model.Customer)
+    {
+    <li>@item.Orders.Count - @item.CompanyName 
+    <ul>
+        @foreach (var subitem in item.Orders)
+        {
+            <li>@subitem.OrderDate</li>
+        }
+    </ul>
+    </li>
+
+    }
+</ul>
