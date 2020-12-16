@@ -13,7 +13,8 @@ namespace ASPNETCoreTraining2020.Pages.modul04
         {
         }
         public PartialViewResult OnGetExport()
-        {
+        { 
+            HttpContext.Response.Headers.Add("content-disposition", "attachment; filename=export.xlsx" );
             HttpContext.Response.ContentType = "application/vnd.ms-excel";
             return Partial("_excel");
         }
