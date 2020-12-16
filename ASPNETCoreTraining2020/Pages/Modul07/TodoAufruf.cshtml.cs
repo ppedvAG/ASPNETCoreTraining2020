@@ -12,13 +12,14 @@ namespace ASPNETCoreTraining2020.Pages.Modul07
     public class TodoAufrufModel : PageModel
     {
         public List<Aufgabe> AufgabenListe { get; set; }
-        public async Task<IActionResult> OnGetAsync([FromServices] IHttpClientFactory _client)
+        public async Task<IActionResult> OnGetAsync([FromServices] IHttpClientFactory _client,
+            [FromQuery]string suche)
         {
 
             // var client = new HttpClient();
 
             var http = _client.CreateClient();
-            var req = new HttpRequestMessage(HttpMethod.Get, "https://jsonplaceholder.typicode.com/todos");
+            var req = new HttpRequestMessage(HttpMethod.Get, $"https://jsonplaceholder.typicode.com/todos?userId={suche}");
             //req.Headers.Accept.Add("application/json");
             req.Headers.Add("Accept", "application/json");
 
