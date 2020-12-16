@@ -22,7 +22,9 @@ namespace ASPNETCoreTraining2020.Pages.Modul07
             //req.Headers.Accept.Add("application/json");
             req.Headers.Add("Accept", "application/json");
 
-            var response = await http.SendAsync(req);
+            var response = await http.SendAsync(req) ;
+         
+
 
             if (response.IsSuccessStatusCode)
             {
