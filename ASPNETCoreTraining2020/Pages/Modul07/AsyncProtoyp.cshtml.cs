@@ -10,28 +10,35 @@ namespace ASPNETCoreTraining2020.Pages.Modul07
 {
     public class AsyncProtoypModel : PageModel
     {
-        public async Task<IActionResult> OnGetAsync([FromServices] IHttpClientFactory _client)
+        public string MyProperty { get; set; }
+        public  void OnGet([FromServices] IHttpClientFactory _client)
         {
 
             // var client = new HttpClient();
 
+            CallMe( _client);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+             
+            //}
+            //else
+            //{
+              
+
+            //}
+           
+        }
+        public  void CallMe( IHttpClientFactory _client)
+        {
             var http = _client.CreateClient();
             var req = new HttpRequestMessage(HttpMethod.Get, "https://localhost:5001/modul07/langsam");
 
-            var response = await http.SendAsync(req);
+            var response = http.SendAsync(req).Result;
 
+            MyProperty = response.StatusCode.ToString();
 
-
-            if (response.IsSuccessStatusCode)
-            {
-             
-            }
-            else
-            {
-              
-
-            }
-            return Page();
         }
+
     }
 }
