@@ -15,6 +15,8 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using ASPNETCoreTraining2020.Pages.modul05;
+using ASPNETCoreTraining2020.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ASPNETCoreTraining2020
 {
@@ -35,6 +37,9 @@ namespace ASPNETCoreTraining2020
             services.AddSingleton<MyCounter>();
             services.AddHttpContextAccessor();
             services.AddHttpClient();
+            services.AddDbContext<NordwindContext>(
+                o => o.UseSqlServer(Configuration.GetConnectionString("northwind"))
+                            );
 
         }
 
