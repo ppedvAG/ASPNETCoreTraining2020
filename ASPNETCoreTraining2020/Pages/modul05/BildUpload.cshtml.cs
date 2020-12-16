@@ -16,6 +16,7 @@ namespace ASPNETCoreTraining2020.Pages.modul05
         }
         public void OnPost(IFormFile datei)
         {
+         
             var pfad = AppDomain.CurrentDomain.GetData("ImgDir") + @"\img\" + datei.FileName;
             using (var fs = new FileStream(pfad, FileMode.Create))
             {
