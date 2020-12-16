@@ -4,8 +4,12 @@
 }
 <h1>Gallery</h1>
 <div class="row">
-
+    @foreach (var item in Model.BildListe)
+    {
     <div class="col-12 col-md-4">
-
+       
+        <img src="/img/@System.IO.Path.GetFileName(item)" class="img-fluid" />
     </div>
+    }
+
 </div>
