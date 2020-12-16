@@ -18,7 +18,7 @@ namespace ASPNETCoreTraining2020.Pages.modul05
     }
     public static class ThumbNailGenExtensions
     {
-        public static IApplicationBuilder UseThumbNailGen( IApplicationBuilder app)
+        public static IApplicationBuilder UseThumbNailGen(this IApplicationBuilder app)
         {
             return app.UseMiddleware<ThumbNailGen>();
         }

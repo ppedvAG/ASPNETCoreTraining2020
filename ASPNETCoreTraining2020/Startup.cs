@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using ASPNETCoreTraining2020.Pages.modul05;
 
 namespace ASPNETCoreTraining2020
 {
@@ -59,7 +60,11 @@ namespace ASPNETCoreTraining2020
 
                 await next.Invoke();
             });
-
+           
+           app.MapWhen(context=>context.Request.Path.ToString().Contains("thumbnail"),subapp=>
+           {
+               subapp.UseThumbNailGen();
+            });
 
             app.UseHttpsRedirection();
             app.Map("/password.html", subapp =>
