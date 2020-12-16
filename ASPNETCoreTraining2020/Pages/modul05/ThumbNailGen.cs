@@ -10,7 +10,10 @@ namespace ASPNETCoreTraining2020.Pages.modul05
 {
     public class ThumbNailGen
     {
+        public ThumbNailGen(RequestDelegate next)
+        {
 
+        }
         public async Task Invoke(HttpContext context)
         {
             var img = context.Request.Query["img"][0];
@@ -31,7 +34,8 @@ namespace ASPNETCoreTraining2020.Pages.modul05
                         await context.Response.Body.WriteAsync(ms.ToArray());
 
                     }
-
+                   
+                 
 
 
                 }
