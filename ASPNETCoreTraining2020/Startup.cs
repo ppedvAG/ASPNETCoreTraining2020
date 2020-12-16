@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -46,16 +47,22 @@ namespace ASPNETCoreTraining2020
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
             app.Map("/password.html", subapp =>
             {
                 subapp.Use(async (context, next) =>
                 {
                     context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                    
                 }
                     );
             });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync($"Hallo {CultureInfo.CurrentCulture.DisplayName}");
+            //});
+
 
             app.UseStaticFiles();
 
@@ -68,6 +75,7 @@ namespace ASPNETCoreTraining2020
             {
                 endpoints.MapRazorPages();
             });
+          
         }
     }
 }
