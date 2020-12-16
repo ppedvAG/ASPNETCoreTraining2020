@@ -7,8 +7,11 @@
     @foreach (var item in Model.BildListe)
     {
     <div class="col-12 col-md-4">
-       
-        <img src="/img/@System.IO.Path.GetFileName(item)" class="img-fluid" />
+
+        @*<img src="/img/@System.IO.Path.GetFileName(item)" class="img-fluid" />*@
+        <a href="/img/@System.IO.Path.GetFileName(item)">
+            <img src="/img/thumbnail?img=@System.IO.Path.GetFileName(item)" class="img-fluid" />
+        </a>
     </div>
     }
 
