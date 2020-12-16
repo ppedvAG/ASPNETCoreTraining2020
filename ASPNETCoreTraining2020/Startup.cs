@@ -2,6 +2,7 @@ using ASPNETCoreTraining2020.modul02;
 using ASPNETCoreTraining2020.Pages.modul03;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,7 +30,7 @@ namespace ASPNETCoreTraining2020
             services.AddSingleton<Class1>();
             services.AddSingleton<MyCounter>();
             services.AddHttpContextAccessor();
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,12 +48,22 @@ namespace ASPNETCoreTraining2020
             }
 
             app.UseHttpsRedirection();
+            app.Map("/password.html", subapp =>
+            {
+                subapp.Use(async (context, next) =>
+                {
+                    context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                }
+                    );
+            });
+
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
-           
+
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
