@@ -1,4 +1,16 @@
-﻿install-package Microsoft.EntityFrameworkCore.sqlserver
+﻿SQL kopieren von 
+https://raw.githubusercontent.com/ppedvAG/ASPNETCoreTraining2020/master/ASPNETCoreTraining2020/Pages/modul06/sqlscript.txt
+
+Server Explorter neue Nortwind DB anlegen 
+  Server (localdb)\mssqllocaldb
+
+neue Abfrage
+-SQL reinkopieren und ausführen
+
+install-package Microsoft.EntityFrameworkCore.sqlserver
 install-package Microsoft.EntityFrameworkCore.tools
 install-package Microsoft.VisualStudio.Web.Codegeneration.design
 
+Data Source=(localdb)\mssqllocaldb;Initial Catalog=Nordwind;Integrated Security=True;Pooling=False
+
+scaffold-dbcontext "Data Source=(localdb)\mssqllocaldb;Initial Catalog=Nordwind;Integrated Security=True;Pooling=False" Microsoft.EntityFrameworkCore.sqlserver -outputdir Models
