@@ -34,6 +34,7 @@ namespace ASPNETCoreTraining2020
             services.AddSingleton<Class1>();
             services.AddSingleton<MyCounter>();
             services.AddHttpContextAccessor();
+            services.AddHttpClient();
 
         }
 

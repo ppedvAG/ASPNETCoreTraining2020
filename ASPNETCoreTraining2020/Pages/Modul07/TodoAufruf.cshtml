@@ -1,0 +1,26 @@
+﻿@page
+@model ASPNETCoreTraining2020.Pages.Modul07.TodoAufrufModel
+@{
+}
+<h1>Aufgabenliste</h1>
+<div class="row">
+    <div class="col"></div>
+</div>
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-primary">
+                Aufgaben
+            </li>
+
+            @foreach (var item in Model.AufgabenListe)
+            {
+                <li class="list-group-item">
+                    @item.title
+                </li>
+            }
+        </ul>
+ 
+
+    </div>
+</div>
