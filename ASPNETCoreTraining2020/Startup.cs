@@ -49,6 +49,7 @@ namespace ASPNETCoreTraining2020
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            AppDomain.CurrentDomain.SetData("ImgDir", env.WebRootPath);
             app.Use(async (context, next) =>
             {
                var srvFeatures=app.ServerFeatures.Get<IServerAddressesFeature>();
